@@ -49,4 +49,6 @@ header h1 a {
     margin-left: 115px;
     margin-bottom: 18px;
     font-size: 25px;
+    background-color: blue;
+    color: white;
 }
