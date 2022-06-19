@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 header h1 {
     text-align: center;
 }
@@ -51,4 +55,16 @@ header h1 a {
     font-size: 25px;
     background-color: blue;
     color: white;
+}
+
+#start-btn {
+    color: green;
+    font-size: 50px;
+    margin: 15px 0 0 550px;
+}
+
+#restart-btn {
+    color: red;
+    font-size: 50px;
+    margin: 15px 0 0 100px;
 }
