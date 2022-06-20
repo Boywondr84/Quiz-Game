@@ -10,17 +10,17 @@ document.getElementById("button2").addEventListener("click", function() {
 var startButton = document.getElementById("start-btn");
 startButton.addEventListener("click", startGame);
 
-var questionContainerElement = document.getElementById("question-box");
 // Start Game: when clicked first question appears and timer begins countdown
 function startGame() {
     console.log("started");
+    timerCountdown();
 }
 
-// Timer
+// Timer - triggered by start button click instead of browser load
 var timerEl = document.getElementById("timerCountdown");
 
     function timerCountdown() {
-        var timeLeft = 60;
+        var timeLeft = 60; // need to slow down timer speed
         
         var timeRemaining = setInterval (function() {
             if (timeLeft > 1) {
@@ -28,17 +28,18 @@ var timerEl = document.getElementById("timerCountdown");
                 timerEl.textContent = (timeLeft + ' seconds remaining. ');
             }
             else if (timeLeft === 1) {
+                timeLeft--;
                 timerEl.textContent = (timeLeft + ' second remaining. ');
             }
             else {
-                clearInterval; timeRemaining;
-                //timerEl.textContent = ("");
-                displayMessage = (' Time is up! ');
+                clearInterval (timeRemaining);
+                timerEl.textContent = (' Time is up! ');
             }
-        })
-};
-
-// Questions
+        }, 1000);
+    };
+    
+var questionContainerElement = document.getElementById("question-box");
+// Questions - how to place these in id=questions?
 
 var questions = [
     {
@@ -51,7 +52,7 @@ var questions = [
         ]
     }, {
         id: 1,
-        q: "Where is the correct place to insert a Javascript?",
+        q: "Where is the correct place to insert a Javascript link in index.html?",
         a: [{ text: "The <head> section", isCorrect: false },
         { text: "Both the <head> section and the <body> section are correct", isCorrect: false },
         { text: "The <body> section", isCorrect: true },
@@ -60,5 +61,4 @@ var questions = [
     }
 ]
 console.log(questions);
-
-timerCountdown();
+//debugger;
