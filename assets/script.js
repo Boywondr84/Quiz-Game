@@ -20,18 +20,18 @@ function startGame() {
 var timerEl = document.getElementById("timerCountdown");
 
     function timerCountdown() {
-        var timeLeft = 60; // need to slow down timer speed
+        var timeLeft = 60;
         
         var timeRemaining = setInterval (function() {
             if (timeLeft > 1) {
                 timeLeft--;
                 timerEl.textContent = (timeLeft + ' seconds remaining. ');
             }
-            else if (timeLeft === 1) {
+            else if (timeLeft <= 1) {
                 timeLeft--;
                 timerEl.textContent = (timeLeft + ' second remaining. ');
             }
-            else {
+            else  {
                 clearInterval (timeRemaining);
                 timerEl.textContent = (' Time is up! ');
             }
@@ -62,3 +62,15 @@ var questions = [
 ]
 console.log(questions);
 //debugger;
+
+// Restart button functionality
+var restartButton = document.getElementById("restart-btn");
+restartButton.addEventListener("click", function(){
+    console.log("restart");
+        // function timerCountdown() {
+        //     var timeRemaining = clearInterval (timeRemaining);
+        // }
+    
+    startGame();
+    //restart button works in that it restarts the timer countdown. It does not stop the original timer countdown however.
+});
