@@ -15,8 +15,11 @@
     <body>
         <!-- Link to high scores - local storage-->
         <div class="high-scores">
-            <a href="#View High Scores">View High Scores</a>
+            <button id="Scores">Scores</button>
             <p id="timerCountdown"></p>
+        </div>
+        <div id="score-display" class="hidden">
+            <ul id ="score-list"></ul>
         </div>
 
         <div class="question-box">
@@ -31,16 +34,23 @@
                 <button id="button2">Button 2</button>
             </div>
             <div>
-                <button>Button 3</button>
+                <button id="button3">Button 3</button>
             </div>
             <div>
-                <button>Button 4</button>
+                <button id="button4">Button 4</button>
             </div>
         </div>
+        <div class="score-box hidden">
+                <input type="text" id="initials">
+                <button id="save-score">Save</button>
+        </div>
+
+        
         <div>
             <button id="start-btn">Start</button>
-            <button id="restart-btn">Restart</button>
+            <!--<button id="restart-btn">Restart</button>-->
         </div>
+        
 
 
         <script src ="assets\script.js"></script>

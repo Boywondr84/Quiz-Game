@@ -61,11 +61,15 @@ header h1 a {
 #start-btn {
     color: green;
     font-size: 50px;
-    margin: 15px 0 0 550px;
+    margin: 15px 0 0 710px;
 }
 
 #restart-btn {
     color: red;
     font-size: 50px;
     margin: 15px 0 0 100px;
+}
+
+.hidden {
+    display:none;
 }
