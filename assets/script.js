@@ -74,7 +74,15 @@ var questions = [
         { text: "Alerts", isCorrect: true },
         { text: "Numbers", isCorrect: false },
     ]
-    }
+    }, {
+        id: 4,
+        q: "How do you create a function in JavaScript?",
+        a: [{ text: "function = myFunction()", isCorrect: true },
+        { text: "function: myFunction()", isCorrect: false },
+        { text: "function myFunction()", isCorrect: false },
+        { text: "function/ createFunction()", isCorrect: false },
+    ]
+}
 ]
 // Scoring
 // var scoring = function() {
@@ -101,7 +109,7 @@ function startGame() {
     console.log("started");
     timerCountdown();
     questionH2.innerText = questions[0].q;
-    for (var i=0; i < 4; i++) {
+    for (var i=0; i < 5; i++) {
         var btn = document.getElementById("button"+(i+1));
         btn.innerText = questions[0].a[i].text;
         btn.value = questions[0].a[i].isCorrect;
